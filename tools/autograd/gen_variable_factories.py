@@ -16,7 +16,7 @@ inline at::Tensor ${name}(${collapsed_formals}) {
     return at::_${name}(${uncollapsed_actuals});
   })();
   at::Tensor result =
-    autograd::make_variable(std::move(tensor), /*requires_grad=*/${requires_grad});
+    autograd::make_variable(std::move(tensor), /*requires_grad=*/options.requires_grad());
   ${post_record_trace}
   return result;
 }

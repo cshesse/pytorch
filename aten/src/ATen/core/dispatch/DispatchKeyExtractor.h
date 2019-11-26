@@ -53,6 +53,9 @@ namespace detail {
     void operator()(c10::optional<ScalarType> dtype) { // [CHECK THIS] pass const &
       if (dtype.has_value())
         options = options.dtype(*dtype);
+      else 
+        // Take default
+        options = options.dtype(ScalarType::Float);
     }
     void operator()(c10::optional<Device> device) {
       if (device.has_value())

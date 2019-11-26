@@ -1001,8 +1001,6 @@ def sort_declarations(grouped_decls):
 
 
 def get_python_signature(declaration, include_out):
-    if declaration['name'] == 'bartlett_window' or declaration['name'] == 'bartlett_window.periodic':
-        print('\n\n\n\n qwe1: ', declaration['name'])
     # Compute the Python function signature for argument parsing,
     # as specified in torch/csrc/utils/python_arg_parser.h.  WARNING:
     # this is NOT the same type signature as specified by PEP 484
